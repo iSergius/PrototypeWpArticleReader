@@ -1,14 +1,18 @@
 package name.isergius.freelance.protowpreader;
 
+import java.io.Serializable;
+
 /**
  * @author Sergey Kondratyev
  */
 
-public class Article {
+public class Article implements Serializable {
 
-    private long id;
-    private String title;
-    private String content;
+    private static final long serialVersionUID = 4422437925968029296L;
+
+    private final long id;
+    private final String title;
+    private final String content;
 
     public Article(long id, String title, String content) {
         this.id = id;
@@ -26,5 +30,14 @@ public class Article {
 
     public String getContent() {
         return content;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

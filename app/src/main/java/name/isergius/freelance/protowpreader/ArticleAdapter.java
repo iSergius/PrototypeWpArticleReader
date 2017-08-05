@@ -62,7 +62,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
         @Override
         public void onClick(View view) {
             Log.i(TAG, "onClick: " + article);
-
+            DetailsActivity.startActivity(view.getContext(), article);
         }
     }
 }
