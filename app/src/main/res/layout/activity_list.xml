@@ -63,6 +63,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_list_search_layout"
-        tools:listitem="@android:layout/simple_list_item_1" />
+        tools:listitem="@layout/item_article" />
 
 </android.support.constraint.ConstraintLayout>
