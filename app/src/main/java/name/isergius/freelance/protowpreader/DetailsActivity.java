@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebView;
 
 /**
  * @author Sergey Kondratyev
@@ -14,9 +15,12 @@ import android.view.View;
 
 public class DetailsActivity extends AppCompatActivity {
 
+    private static final String ARTICLE = "article";
+    private WebView content;
+
     public static void startActivity(Context context, Article article) {
         Intent intent = new Intent(context, DetailsActivity.class);
-        intent.putExtra("article", article);
+        intent.putExtra(ARTICLE, article);
         context.startActivity(intent);
     }
 
@@ -32,5 +36,8 @@ public class DetailsActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        Article article = (Article) getIntent().getExtras().getSerializable(ARTICLE);
+        content = (WebView) findViewById(R.id.activity_details_content);
+        content.loadData(article.getContent(), "text/html", "UTF-16");
     }
 }
