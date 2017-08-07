@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Prototype WordPress Article Reader</string>
+    <string name="activity_list_search_hint">Search</string>
 </resources>
